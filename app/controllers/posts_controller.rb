@@ -67,8 +67,8 @@ class PostsController < ApplicationController
   end
 
     def dislike
-      @post = Link.find(params[:id])
-      @link.dislike_from current_user
+      @post = Post.find(params[:id])
+      @post.dislike_by current_user
       redirect_to :back
     end
   private
