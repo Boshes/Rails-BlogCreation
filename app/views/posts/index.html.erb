@@ -1,0 +1,20 @@
+<% @posts.each do |post| %>
+  <div class="post row clearfix">
+    <h2>
+      <%= link_to post.title, post %><br>
+      <small class="author">Created<%= time_ago_in_words(post.created_at) %> <% if post.user %>by <%= post.user.email%><%end%></small>
+    </h2>
+    <div class="btn-group">
+      <%= link_to like_post_path(post), method: :get, class: "btn btn-default btn-sm" do %>
+        <span class="glyphicon glyphicon-chevron-up"></span>
+        Like
+        <%= post.get_likes.size %>
+      <% end %>
+      <%= link_to dislike_post_path(post), method: :get, class: "btn btn-default btn-sm" do %>
+        <span class="glyphicon glyphicon-chevron-down">
+        Dislikes
+        <%= post.get_dislikes.size %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
