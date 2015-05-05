@@ -1,5 +1,5 @@
 <% @posts.each do |post| %>
-  <div class="post row clearfix">
+  <div class="post row ">
     <h2>
       <%= link_to post.title, post %><br>
       <small class="author">Created <%= time_ago_in_words(post.created_at) %> <% if post.user %>by <%= post.user.email%><%end%>
@@ -9,5 +9,4 @@
         <%= post.get_dislikes.size %></small>
     </h2>
     </div>
-  </div>
 <% end %>
