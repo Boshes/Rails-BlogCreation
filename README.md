@@ -1,2 +1,2 @@
-# Ruby-BlogCreation
-Ruby Blog creation from scratch
+# Rails-BlogCreation
+Ruby on Rails Blog creation from scratch
